@@ -2,7 +2,7 @@ version: "3.8"
 services:
 
   db:
-    image: mysql
+    image: mariadb:10.5.1-bionic
     container_name: mysql_$CONTAINER_NAME
     restart: always
     env_file:
@@ -10,7 +10,11 @@ services:
     volumes:
       - ./db-data:/var/lib/mysql
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      # MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
     networks:
       - networkName
   adminer:
