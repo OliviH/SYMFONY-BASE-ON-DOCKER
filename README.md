@@ -3,6 +3,7 @@
 ## Getting started
 
 ```bash
+ln -s ./.env.example ./.env
 docker-compose build
 make start
 make exec-shell-web
