@@ -19,8 +19,3 @@ sudo chown -R $USER ./www
 ```
 chrome://flags/#allow-insecure-localhost
 ```
-
-```bash
-docker-compose exec web bash
-composer create-project symfony/website-skeleton project
-```
